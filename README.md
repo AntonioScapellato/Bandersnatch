@@ -1,2 +1,0 @@
-# Bandersnatch
-Just for fun
