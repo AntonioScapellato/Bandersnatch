@@ -1,43 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mouse Click Example - A-Frame</title>
-    <meta name="description" content="Mouse Click Example - A-Frame">
-    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
-    <!--
-    The event-set component gives you a quick way to add events
-    to elements (like click, mouseenter, mouseleave, mousedown, mouseup, and fusing)
-    without having to write Javascript for each event.
-
-    For exmample if you want to give the user feedback when they hover over the element,
-    you can do event-set__enter="_event: mouseenter; material.color: blue"
-    -->
+    <title>Eye Shooting Web VR game | Liv 1</title>
+    <meta name="description" content="Web VR Game by Antonio Scapellato">
+    <meta name="author" content="Antonio Scapellato">
+     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
   </head>
   <body>
     <a-scene>
 
       <!-- BASIC SETTINGS -->
-      <!--
-           The camera has a cursor component,
-           which uses the mouse as the rayOrigin,
-           so that you can click entities in the scene
-           with the mouse.
-      -->
       <a-entity id="camera" camera="userHeight: 1.6" look-controls>
         <a-cursor></a-cursor>
       </a-entity>
+      <a-sky color="#222"></a-sky>
 
       <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" shadow
              event-set__enter="_event: mouseenter; color: #026fc9"
              event-set__leave="_event: mouseleave; color: #4CC3D9">
-        <!-- This animation begins when the box is clicked with the mouse. -->
-        <a-animation attribute="rotation"
-               dur="3000"
-               fill="forwards"
-               to="0 360 0"
-               direction="alternate"
-               begin="mouseenter"></a-animation>
       </a-box>
 
       <a-sphere position="0 30 -30" radius="1.25" color="#EF2D5E" shadow
@@ -59,7 +40,6 @@
                begin="mouseenter"></a-animation>
       </a-sphere>
 
-      <a-sky color="#222"></a-sky>
     </a-scene>
   </body>
 </html>
